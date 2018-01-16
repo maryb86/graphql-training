@@ -1,0 +1,43 @@
+# FRAGMENTS
+
+1:
+
+{
+  first: organization(login: "facebook") {
+    login
+    ...orgFields
+  }
+  second: organization(login: "Netflix") {
+    ...orgFields
+  }
+}
+
+fragment orgFields on Organization {
+  id
+  url
+  members {
+    totalCount
+  }
+}
+
+2:
+{
+	stubailo: user(login: "stubailo") {
+    ...userFields
+	}
+  gaearon: user(login: "gaearon") {
+    ...userFields
+	}
+}
+
+fragment userFields on User {
+    login
+    createdAt
+		company
+    location
+    email
+  	repositories {
+      totalCount
+    }
+}
+
