@@ -1,1 +1,17 @@
+ALIASES
+# Cannot have multiple roots with the same name. Provide an alias to get the data e.g. org_a + org_b as below
+{
+ 	org_a: organization(login: "facebook") {
+     login
+     members {
+       totalCount
+     }
+   }
+ 	org_b: organization(login: "Netflix") {
+     login
+     members {
+       totalCount
+     }
+   }
+ }
 
